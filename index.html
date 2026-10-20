@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amayas — Sport UGC Creator</title>
+<meta name="description" content="Amayas — Numidian sprinter based in Belgium. UGC creator for running, sportswear and sports products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0c; --surface:#151517; --line:#26262a;
+    --text:#f4f1ea; --muted:#9b978f; --accent:#ff5a1f; --accent-2:#ffb21f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,11,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .logo{font-family:Anton,sans-serif;font-size:1.4rem;letter-spacing:.06em;text-decoration:none}
+  .logo span{color:var(--accent)}
+  nav ul{display:flex;gap:24px;list-style:none;font-size:.9rem}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--text)}
+
+  /* hero */
+  .hero{position:relative;padding:110px 0 90px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+     repeating-linear-gradient(90deg,transparent 0 118px,rgba(255,255,255,.035) 118px 120px);pointer-events:none}
+  .hero::after{content:"";position:absolute;right:-15%;top:-30%;width:70%;height:160%;
+     background:radial-gradient(closest-side,rgba(255,90,31,.25),transparent);pointer-events:none}
+  .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+     border:1px solid var(--accent);padding:4px 12px;border-radius:999px;margin-bottom:24px}
+  h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(4rem,14vw,10rem);line-height:.9;letter-spacing:.01em;text-transform:uppercase}
+  h1 .x{color:var(--accent);font-style:italic}
+  .tifi{margin-top:14px;color:var(--muted);letter-spacing:.08em}
+  .tifi em{font-style:normal;color:var(--accent-2)}
+  .tagline{font-size:clamp(1.1rem,2.6vw,1.5rem);margin-top:22px;max-width:620px}
+  .tagline em{font-style:normal;color:var(--accent-2)}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-main{background:var(--accent);color:#111}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+
+  /* sections */
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  h2{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(2.2rem,6vw,3.4rem);text-transform:uppercase;letter-spacing:.02em;margin-bottom:12px}
+  .lead{color:var(--muted);max-width:640px;margin-bottom:40px}
+
+  .grid{display:grid;gap:18px}
+  .services{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card .num{font-family:Anton,sans-serif;color:var(--accent);font-size:1.6rem}
+  .card h3{font-size:1.1rem;margin:8px 0 6px}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  .videos{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .video{aspect-ratio:9/16;border-radius:16px;border:1px dashed var(--line);background:
+     linear-gradient(160deg,#1b1b1e,#101012);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;position:relative;overflow:hidden}
+  .video::before{content:"▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.4rem;color:rgba(255,255,255,.18)}
+  .video b{font-size:.95rem}
+  .video small{color:var(--muted)}
+
+  .stats{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-top:10px}
+  .stat{border-left:3px solid var(--accent);padding:6px 0 6px 16px}
+  .stat strong{font-family:Anton,sans-serif;font-size:2rem;display:block;font-weight:400}
+  .stat span{color:var(--muted);font-size:.9rem}
+
+  .contact{text-align:center}
+  .contact .lead{margin-left:auto;margin-right:auto}
+  .socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+  @media (max-width:640px){
+    nav ul{display:none}
+    .hero{padding:70px 0 60px}
+    section{padding:60px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">AMAYAS<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Content</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">🐆 Sport UGC Creator</span>
+    <h1>Amaya<span class="x">s</span></h1>
+    <p class="tifi">ⴰⵎⴰⵢⴰⵙ · <em>“cheetah” in Tamazight</em></p>
+    <p class="tagline">Numidian sprinter based in Belgium. Authentic content for <em>running, sportswear and sports products</em>, filmed by an athlete who actually trains in them.</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#contact">Work with me</a>
+      <a class="btn btn-ghost" href="#work">See my content</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="lead">Former international-level sprinter turned content creator. I make short-form videos that show how sports gear performs in real training: on the track, on the road, and in the gym. Content available in English, French and Arabic.</p>
+    <div class="grid stats">
+      <div class="stat"><strong>3</strong><span>Languages: EN · FR · AR</span></div>
+      <div class="stat"><strong>Track</strong><span>Sprinting background</span></div>
+      <div class="stat"><strong>BE</strong><span>Based in Belgium, open to travel</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I create</h2>
+    <p class="lead">Vertical videos ready for TikTok, Instagram Reels, YouTube Shorts and paid ads.</p>
+    <div class="grid services">
+      <div class="card"><div class="num">01</div><h3>Product demos</h3><p>Shoes, apparel and gear tested in real sessions, with close-ups that sell.</p></div>
+      <div class="card"><div class="num">02</div><h3>Unboxing &amp; first try</h3><p>Honest first impressions, from the box to the first run.</p></div>
+      <div class="card"><div class="num">03</div><h3>Training day-in-the-life</h3><p>Your product woven naturally into an athlete's routine.</p></div>
+      <div class="card"><div class="num">04</div><h3>Hooks &amp; ad variations</h3><p>Several hooks per video so you can test what converts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Work</h2>
+    <p class="lead">Selected samples. New videos added regularly.</p>
+    <div class="grid videos">
+      <div class="video"><b>Running shoe review</b><small>Coming soon</small></div>
+      <div class="video"><b>Sprint session gear</b><small>Coming soon</small></div>
+      <div class="video"><b>Unboxing</b><small>Coming soon</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p class="lead">Brands, agencies and sports labels: tell me about your product and I'll send rates and ideas within 48 hours.</p>
+    <span class="btn btn-ghost" aria-disabled="true">Contact email coming soon</span>
+  </div>
+</section>
+
+<footer>
+  © <span id="y">2026</span> Amayas · Sport UGC Creator · Belgium
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
